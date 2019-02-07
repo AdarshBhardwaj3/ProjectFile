@@ -1,0 +1,25 @@
+package Practical;
+
+import java.util.*;
+
+public class AddressBook implements Address1 {
+	LinkedList<SingleAddress> l1 = new LinkedList<SingleAddress>();
+
+	public void removeAddress(String fname) {
+		for (SingleAddress s1 : l1) {
+			if (s1.firstName.equals(fname)) {
+				l1.remove(s1);
+			}
+		}
+
+	}
+
+	public void addAddress(SingleAddress s1) {
+		int count = 0;
+		for (SingleAddress s2 : l1) {
+			if (s2.getFirstName().equals(s1.getFirstName())) {
+				count++;
+				break;
+			}
+		}
+		if (count != 0) {
